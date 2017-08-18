@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using HtmlAgilityPack;
+
 namespace Webcrawler
 {
     class Program
@@ -12,5 +14,15 @@ namespace Webcrawler
         {
 
         }
+
+        static void CrawlSite()
+        {
+            string mainSite = "http://www.espn.com/nba/statistics";
+
+            HtmlWeb site = new HtmlWeb();
+            HtmlDocument htmlDocument = site.Load(@mainSite);
+
+        }
+
     }
 }
