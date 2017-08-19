@@ -12,16 +12,19 @@ namespace Webcrawler
     {
         static void Main(string[] args)
         {
-
+            CrawlSite();
         }
 
         static void CrawlSite()
         {
             string mainSite = "http://www.espn.com/nba/statistics";
 
+            //We first crawl the site
             HtmlWeb site = new HtmlWeb();
             HtmlDocument htmlDocument = site.Load(@mainSite);
 
+            //Now we find all the components of an specific form
+           
         }
 
     }
