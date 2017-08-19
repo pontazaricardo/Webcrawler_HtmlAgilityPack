@@ -42,7 +42,7 @@ namespace Webcrawler
             HtmlNode node_offensiveLeaders_div = node_offensiveLeaders.SelectNodes("div[@class='mod-content']").FirstOrDefault();
             HtmlNode node_offensiveLeaders_table = node_offensiveLeaders_div.SelectNodes("table").FirstOrDefault();
 
-            for (int i = 1; i < node_offensiveLeaders_table.SelectNodes("tr").Count(); i++) //We skip the first row
+            for (int i = 1; i < node_offensiveLeaders_table.SelectNodes("tr").Count()-1; i++) //We skip the first and last row
             {
                 HtmlNode row = node_offensiveLeaders_table.SelectNodes("tr")[i];
 
