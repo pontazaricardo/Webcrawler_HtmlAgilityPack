@@ -37,14 +37,24 @@ namespace Webcrawler
             HtmlNodeCollection leaderBoards_02 = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer mod-no-header']"); //We will use all of them
 
             //We get the following:
-            //1. Offensive leaders
-            HtmlNode node_offensiveLeaders = leaderBoards_01[0];
-            HtmlNode node_offensiveLeaders_div = node_offensiveLeaders.SelectNodes("div[@class='mod-content']").FirstOrDefault();
-            HtmlNode node_offensiveLeaders_table = node_offensiveLeaders_div.SelectNodes("table").FirstOrDefault();
 
-            for (int i = 1; i < node_offensiveLeaders_table.SelectNodes("tr").Count()-1; i++) //We skip the first and last row
+            //1. Offensive leaders and defensive leaders.
+            listOfPlayers_offensiveLeaders = createList_01(leaderBoards_01[0]);
+            listOfPlayers_defensiveLeaders = createList_01(leaderBoards_01[1]);
+
+            
+        }
+
+        public static List<Player> createList_01(HtmlNode node)
+        {
+            List<Player> result = new List<Player>();
+
+            HtmlNode node_div = node.SelectNodes("div[@class='mod-content']").FirstOrDefault();
+            HtmlNode node_table = node_div.SelectNodes("table").FirstOrDefault();
+
+            for (int i = 1; i < node_table.SelectNodes("tr").Count() - 1; i++) //We skip the first and last row
             {
-                HtmlNode row = node_offensiveLeaders_table.SelectNodes("tr")[i];
+                HtmlNode row = node_table.SelectNodes("tr")[i];
 
                 HtmlNode cell_name = null;
                 HtmlNode cell_points = null;
@@ -71,13 +81,12 @@ namespace Webcrawler
                 player.link = link;
                 player.points = points;
 
-                listOfPlayers_offensiveLeaders.Add(player);
-
+                result.Add(player);
             }
 
-
-
+            return result;
         }
+
 
     }
 }
