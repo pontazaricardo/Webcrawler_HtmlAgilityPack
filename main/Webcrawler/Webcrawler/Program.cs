@@ -24,7 +24,8 @@ namespace Webcrawler
             HtmlDocument htmlDocument = site.Load(@mainSite);
 
             //Now we find all the components of an specific form
-           
+            HtmlNodeCollection leaderBoards_top = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer']");
+            HtmlNodeCollection leaderBoards_bottom = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer mod-no-header']");
         }
 
     }
