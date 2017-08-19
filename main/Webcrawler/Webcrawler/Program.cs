@@ -72,7 +72,6 @@ namespace Webcrawler
                 player.points = points;
 
                 listOfPlayers_offensiveLeaders.Add(player);
-
             }
 
 
