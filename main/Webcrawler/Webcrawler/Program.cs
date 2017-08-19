@@ -26,6 +26,12 @@ namespace Webcrawler
             //Now we find all the components of an specific form
             HtmlNodeCollection leaderBoards_01 = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer']"); //We need only the first two.
             HtmlNodeCollection leaderBoards_02 = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer mod-no-header']"); //We will use all of them
+
+            //We get the following:
+            //1. Offensive leaders
+            HtmlNode node_offensiveLeaders = leaderBoards_01[0];
+
+
         }
 
     }
