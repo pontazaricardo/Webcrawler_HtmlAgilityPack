@@ -31,6 +31,8 @@ namespace Webcrawler
             List<Player> listOfPlayers_fieldGoal = new List<Player>();
             List<Player> listOfPlayers_steals = new List<Player>();
 
+            Console.WriteLine("1. Crawling website: " + mainSite);
+            
             //We first crawl the site
             HtmlWeb site = new HtmlWeb();
             HtmlDocument htmlDocument = site.Load(@mainSite);
@@ -38,6 +40,9 @@ namespace Webcrawler
             //Now we find all the components of an specific form
             HtmlNodeCollection leaderBoards_01 = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer']"); //We need only the first two.
             HtmlNodeCollection leaderBoards_02 = htmlDocument.DocumentNode.SelectNodes("//div[@class='mod-container mod-table mod-no-footer mod-no-header']"); //We will use all of them
+
+            Console.WriteLine("Crawled!\n");
+            Console.WriteLine("2. Constructing objects.");
 
             //We get the following:
 
@@ -50,6 +55,11 @@ namespace Webcrawler
             listOfPlayers_fieldGoal = createList_01(leaderBoards_02[1]);
             listOfPlayers_blocks = createList_01(leaderBoards_02[2]);
             listOfPlayers_steals = createList_01(leaderBoards_02[03]);
+
+            //Now we save to file.
+
+            Console.WriteLine("Constructed!\n");
+            Console.WriteLine("3.Saving to files.");
         }
 
         public static List<Player> createList_01(HtmlNode node)
@@ -94,24 +104,37 @@ namespace Webcrawler
             return result;
         }
 
-        public static void SaveToFile(List<Player> listOfPlayers, string title)
+
+        public static bool SaveToFile(List<Player> listOfPlayers, string title)
         {
+
             string fileName = ConfigurationSettings.AppSettings["Files.Main"];
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true)) //we use 'using' because it automatically flushes and closes the stream; also calls the IDisposable.Dispose of the stream object.
+            try
             {
-                file.WriteLine("---------------------");
-                file.WriteLine(title);
-                file.WriteLine("");
-
-                for (int i = 0; i < listOfPlayers.Count; i++)
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true)) //we use 'using' because it automatically flushes and closes the stream; also calls the IDisposable.Dispose of the stream object.
                 {
-                    int counter = i + 1;
-                    file.WriteLine(counter + ", " + listOfPlayers[i].name + ", " + listOfPlayers[i].points + ", " + listOfPlayers[i].link);
-                }
+                    file.WriteLine("---------------------");
+                    file.WriteLine(title);
+                    file.WriteLine("");
 
-                file.WriteLine("---------------------");
+                    for (int i = 0; i < listOfPlayers.Count; i++)
+                    {
+                        int counter = i + 1;
+                        file.WriteLine(counter + ", " + listOfPlayers[i].name + ", " + listOfPlayers[i].points + ", " + listOfPlayers[i].link);
+                    }
+
+                    file.WriteLine("---------------------");
+                }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
+            
         }
     }
 }
