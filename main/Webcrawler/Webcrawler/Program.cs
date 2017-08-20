@@ -8,6 +8,9 @@ using Webcrawler.CustomObjects;
 
 using HtmlAgilityPack;
 
+using System.IO;
+using System.Configuration;
+
 namespace Webcrawler
 {
     class Program
@@ -91,6 +94,9 @@ namespace Webcrawler
             return result;
         }
 
-
+        public static void SaveToFile(List<Player> listOfPlayers)
+        {
+            string fileName = ConfigurationSettings.AppSettings["Files.Main"];
+        }
     }
 }
