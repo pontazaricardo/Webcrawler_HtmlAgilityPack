@@ -45,6 +45,8 @@ namespace Webcrawler
             //2. Assists, Field goal, blocks, steals
             listOfPlayers_assists = createList_01(leaderBoards_02[0]);
             listOfPlayers_fieldGoal = createList_01(leaderBoards_02[1]);
+            listOfPlayers_blocks = createList_01(leaderBoards_02[2]);
+            listOfPlayers_steals = createList_01(leaderBoards_02[03]);
         }
 
         public static List<Player> createList_01(HtmlNode node)
