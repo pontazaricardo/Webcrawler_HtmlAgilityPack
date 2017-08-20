@@ -18,6 +18,8 @@ namespace Webcrawler
         static void Main(string[] args)
         {
             CrawlSite();
+
+            Console.ReadLine();
         }
 
         static void CrawlSite()
@@ -60,6 +62,20 @@ namespace Webcrawler
 
             Console.WriteLine("Constructed!\n");
             Console.WriteLine("3.Saving to files.");
+
+            if( SaveToFile(listOfPlayers_offensiveLeaders,"Offensive Leaders") &&
+                SaveToFile(listOfPlayers_defensiveLeaders, "Defensive Leaders") &&
+                SaveToFile(listOfPlayers_assists, "Assists") &&
+                SaveToFile(listOfPlayers_blocks, "Blocks") &&
+                SaveToFile(listOfPlayers_fieldGoal, "Field goal") &&
+                SaveToFile(listOfPlayers_steals, "Steals")
+              )
+            {
+                Console.WriteLine("Saved! Please check " + ConfigurationSettings.AppSettings["Files.Main"]);
+            }else
+            {
+                Console.WriteLine("There was an error saving to the file. Please check and try again.");
+            }
         }
 
         public static List<Player> createList_01(HtmlNode node)
