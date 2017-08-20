@@ -94,9 +94,24 @@ namespace Webcrawler
             return result;
         }
 
-        public static void SaveToFile(List<Player> listOfPlayers)
+        public static void SaveToFile(List<Player> listOfPlayers, string title)
         {
             string fileName = ConfigurationSettings.AppSettings["Files.Main"];
+
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true)) //we use 'using' because it automatically flushes and closes the stream; also calls the IDisposable.Dispose of the stream object.
+            {
+                file.WriteLine("---------------------");
+                file.WriteLine(title);
+                file.WriteLine("");
+
+                for (int i = 0; i < listOfPlayers.Count; i++)
+                {
+                    int counter = i + 1;
+                    file.WriteLine(counter + ", " + listOfPlayers[i].name + ", " + listOfPlayers[i].points + ", " + listOfPlayers[i].link);
+                }
+
+                file.WriteLine("---------------------");
+            }
         }
     }
 }
