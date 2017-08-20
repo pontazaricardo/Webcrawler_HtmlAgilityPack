@@ -71,7 +71,7 @@ namespace Webcrawler
                 SaveToFile(listOfPlayers_steals, "Steals")
               )
             {
-                Console.WriteLine("Saved! Please check " + ConfigurationSettings.AppSettings["Files.Main"]);
+                Console.WriteLine("Saved! Please check " + ConfigurationSettings.AppSettings["File.location"]);
             }else
             {
                 Console.WriteLine("There was an error saving to the file. Please check and try again.");
@@ -124,7 +124,7 @@ namespace Webcrawler
         public static bool SaveToFile(List<Player> listOfPlayers, string title)
         {
 
-            string fileName = ConfigurationSettings.AppSettings["Files.Main"];
+            string fileName = ConfigurationSettings.AppSettings["File.location"];
 
             try
             {
