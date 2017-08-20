@@ -42,6 +42,7 @@ namespace Webcrawler
             listOfPlayers_offensiveLeaders = createList_01(leaderBoards_01[0]);
             listOfPlayers_defensiveLeaders = createList_01(leaderBoards_01[1]);
 
+            //2. Assists, Field goal, blocks, steals
             listOfPlayers_assists = createList_01(leaderBoards_02[0]);
         }
 
