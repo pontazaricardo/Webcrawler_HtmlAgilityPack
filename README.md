@@ -4,3 +4,4 @@ This is an example of how to crawl a website using the (NuGet) HtmlAgilityPack a
 
 ## Installation
 
+![installation](/images/installation.gif?raw=true)
