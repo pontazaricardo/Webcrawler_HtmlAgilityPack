@@ -35,3 +35,17 @@ and
 were spotted. These two structures are the ones that contain the players' data.
 
 ![data](/images/htmlSections.gif?raw=true)
+
+After identifying the needed sections, the website crawl can be done in three easy steps.
+
+## Crawling code
+
+### Loading the main site
+
+The first step is to crawl the main site. In order to do this, the code
+```c#
+string mainSite = "http://www.espn.com/nba/statistics";
+HtmlWeb site = new HtmlWeb();
+HtmlDocument htmlDocument = site.Load(@mainSite);
+```
+is needed.
