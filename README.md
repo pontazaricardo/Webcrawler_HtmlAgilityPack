@@ -13,3 +13,7 @@ In order to install the **HtmlAgilityPack** module to your project, in Visual st
 The above steps will install the **HtmlAgilityPack** in your project. A confirmation *readme.txt* will be displayed. In order to be completely sure that your project now has the **HtmlAgilityPack**, check your project's *References*.
 
 ![installation](/images/installation.gif?raw=true)
+
+## Usage
+
+For this project, the website [http://www.espn.com/nba/statistics](http://www.espn.com/nba/statistics) was crawled.
