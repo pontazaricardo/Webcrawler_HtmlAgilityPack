@@ -76,11 +76,11 @@ So for example
 ```c#
 HtmlNodeCollection collection = Parent.SelectNodes("//div[@class='foo bar']");
 ```
-will look starting from the main site (and probably will find *<div>* that are not inside *Parent*), and
+will look starting from the main site (and probably will find *div* that are not inside *Parent*), and
 ```c#
 HtmlNodeCollection collection = Parent.SelectNodes("div[@class='foo bar']");
 ```
-will look for the *<div>* inside *Parent* only (in one level).
+will look for the *div* inside *Parent* only (in one level).
 
 ### Construction of objects
 
