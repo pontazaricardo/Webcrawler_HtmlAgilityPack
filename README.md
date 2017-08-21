@@ -130,3 +130,16 @@ public static bool SaveToFile(List<Player> listOfPlayers, string title)
         }
 ```
 which returns either **true** or **false** for success or failure when saving, respectively.
+
+### Notes
+
+For this function
+1. The file path is read from the *ConfigurationSettings.AppSettings["File.location"]* object. Please check the project's **App.config** to verify its value.
+2. The commands
+```c#
+using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true)){
+	...
+}
+```
+was used. This command automatically flushes and closes the stream and also calls the **IDisposable.Dispose** of the stream object.
+
