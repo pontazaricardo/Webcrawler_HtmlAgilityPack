@@ -143,3 +143,6 @@ using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true))
 ```
 was used. This command automatically flushes and closes the stream and also calls the **IDisposable.Dispose** of the stream object.
 
+### Execution
+
+When running the project, each step's status is output to console.
