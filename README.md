@@ -91,3 +91,4 @@ HtmlNode cell_name_aTag = cell_name.SelectNodes("a").FirstOrDefault();
 string link = cell_name_aTag.Attributes["href"].Value.ToString();
 string name = cell_name_aTag.InnerText;
 ```
+With these values, classical objects can be constructed.
