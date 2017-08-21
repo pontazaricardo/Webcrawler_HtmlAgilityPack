@@ -146,3 +146,5 @@ was used. This command automatically flushes and closes the stream and also call
 ### Execution
 
 When running the project, each step's status is output to console.
+
+![console](/images/console.gif?raw=true)
