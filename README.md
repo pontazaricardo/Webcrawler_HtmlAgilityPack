@@ -10,6 +10,6 @@ In order to install the **HtmlAgilityPack** module to your project, in Visual st
 3. When found, click your project and then click on *Install*.
 4. In the *Review Changes* window, click on Ok.
 
-The above steps will install the **HtmlAgilityPack** in your project. A confirmation *readme.txt* will be displayed. In order to be completely sure that your project now has the **HtmlAgilityPack**, check under your project's *References* folder.
+The above steps will install the **HtmlAgilityPack** in your project. A confirmation *readme.txt* will be displayed. In order to be completely sure that your project now has the **HtmlAgilityPack**, check your project's *References*.
 
 ![installation](/images/installation.gif?raw=true)
