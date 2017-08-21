@@ -92,3 +92,41 @@ string link = cell_name_aTag.Attributes["href"].Value.ToString();
 string name = cell_name_aTag.InnerText;
 ```
 With these values, classical objects can be constructed.
+
+## Saving the data
+
+After the data has been crawled, it can be saved in different places (as a Database for example). For this project, it is saved to a text file by the code
+```c#
+public static bool SaveToFile(List<Player> listOfPlayers, string title)
+        {
+
+            string fileName = ConfigurationSettings.AppSettings["File.location"];
+
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName, true)) //we use 'using' because it automatically flushes and closes the stream; also calls the IDisposable.Dispose of the stream object.
+                {
+                    file.WriteLine("---------------------");
+                    file.WriteLine(title);
+                    file.WriteLine("");
+
+                    for (int i = 0; i < listOfPlayers.Count; i++)
+                    {
+                        int counter = i + 1;
+                        file.WriteLine(counter + ", " + listOfPlayers[i].name + ", " + listOfPlayers[i].points + ", " + listOfPlayers[i].link);
+                    }
+
+                    file.WriteLine("---------------------");
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+
+            return true;
+            
+        }
+```
+which returns either **true** or **false** for success or failure when saving, respectively.
