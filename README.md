@@ -14,9 +14,9 @@ The above steps will install the **HtmlAgilityPack** in your project. A confirma
 
 ![installation](/images/installation.gif?raw=true)
 
-## Usage
+## How to crawl a website
 
-For this project, the website [http://www.espn.com/nba/statistics](http://www.espn.com/nba/statistics) was crawled. At the moment of the development of this project, this website had the following tables:
+For this project, the website [http://www.espn.com/nba/statistics](http://www.espn.com/nba/statistics) was crawled as an example. At the moment of the development of this project, this website had the following tables:
 1. Offensive Leaders,
 2. Defensive Leaders,
 3. Assists,
@@ -24,4 +24,12 @@ For this project, the website [http://www.espn.com/nba/statistics](http://www.es
 5. Field Goal, and
 6. Steals
 
-with the ranking, name, hyperlink and points of each player. After quickly analyzing the HTML
+with the ranking, name, hyperlink and points of each player. After analyzing the HTML, some defined structures are needed to be identified. For this project, the structures:
+```html
+<div class="mod-container mod-table mod-no-footer">
+```
+and 
+```html
+<div class="mod-container mod-table mod-no-footer mod-no-header">
+```
+were spotted. These two structures are the ones that contain the players' data.
