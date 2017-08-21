@@ -48,4 +48,7 @@ string mainSite = "http://www.espn.com/nba/statistics";
 HtmlWeb site = new HtmlWeb();
 HtmlDocument htmlDocument = site.Load(@mainSite);
 ```
-is needed.
+is needed. Please note that for these commands to work, you need to do the import:
+```c#
+using HtmlAgilityPack;
+```
