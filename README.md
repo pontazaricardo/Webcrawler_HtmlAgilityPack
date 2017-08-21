@@ -33,3 +33,5 @@ and
 <div class="mod-container mod-table mod-no-footer mod-no-header">
 ```
 were spotted. These two structures are the ones that contain the players' data.
+
+![data](/images/htmlSections.gif?raw=true)
