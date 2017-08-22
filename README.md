@@ -148,3 +148,7 @@ was used. This command automatically flushes and closes the stream and also call
 When running the project, each step's status is output to console.
 
 ![console](/images/consolegif.gif?raw=true)
+
+### Results
+
+After running the program, a text file is generated under **C:\webcrawler_results.txt** (If you want to change the path of this file - or the file name - modify the *File.location* value in the **App.config** file).
