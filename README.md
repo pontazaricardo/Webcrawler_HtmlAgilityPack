@@ -152,3 +152,5 @@ When running the project, each step's status is output to console.
 ### Results
 
 After running the program, a text file is generated under **C:\webcrawler_results.txt** (If you want to change the path of this file - or the file name - modify the *File.location* value in the **App.config** file).
+
+![result](/images/result.png?raw=true)
