@@ -147,4 +147,4 @@ was used. This command automatically flushes and closes the stream and also call
 
 When running the project, each step's status is output to console.
 
-![console](/images/console.png?raw=true)
+![console](/images/console.gif?raw=true)
