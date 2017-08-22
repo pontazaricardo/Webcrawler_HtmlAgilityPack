@@ -52,6 +52,8 @@ but we will use the first two of the *mod-container mod-table mod-no-footer* typ
 
 ![data2](/images/othersection.gif?raw=true)
 
+so we will ignore these two last sections.
+
 ## Crawling code
 
 ### Loading the main site
