@@ -48,6 +48,7 @@ and also 4 sections
 ```html
 <div class="mod-container mod-table mod-no-footer mod-no-header">
 ```
+but we will use the first two of the *mod-container mod-table mod-no-footer* type because the last two belong to a different section.
 
 ## Crawling code
 
