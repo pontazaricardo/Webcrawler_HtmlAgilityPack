@@ -38,6 +38,17 @@ were spotted. These two structures are the ones that contain the players' data.
 
 After identifying the needed sections, the website crawl can be done in three easy steps.
 
+### Note
+
+The selected website has 4 sections
+```html
+<div class="mod-container mod-table mod-no-footer">
+```
+and also 4 sections
+```html
+<div class="mod-container mod-table mod-no-footer mod-no-header">
+```
+
 ## Crawling code
 
 ### Loading the main site
