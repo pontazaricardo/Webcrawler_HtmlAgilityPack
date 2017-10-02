@@ -58,7 +58,7 @@ namespace Webcrawler
             listOfPlayers_blocks = createList_01(leaderBoards_02[2]);
             listOfPlayers_steals = createList_01(leaderBoards_02[03]);
 
-            //Now we save to file.
+            //Now we save to file. 
 
             Console.WriteLine("Constructed!\n");
             Console.WriteLine("3.Saving to files.");
